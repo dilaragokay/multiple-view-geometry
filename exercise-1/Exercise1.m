@@ -65,7 +65,7 @@ A' * B; % * performs matrix multiplication
 
 function equals = approxequal(x, y, epsilon)
 if size(x) == size(y)
-    equals = all(abs(x - y) <= 0.5);
+    equals = all(abs(x - y) <= epsilon);
 end
 end
 
