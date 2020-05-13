@@ -32,4 +32,5 @@ for i=-100:100
     all_x(i + 101) = norm(x);
     all_errors(i + 101) = norm((D * x) - b).^2;
 end
-plot(all_x, all_errors)
+lambda = -100:100;
+plot(lambda, all_x, 'b-', lambda,all_errors, 'r-');
