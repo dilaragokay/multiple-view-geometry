@@ -27,6 +27,5 @@ subplot(2,2,3)
 imagesc(I1)
 colormap(gca, 'gray')
 hold on;
-quiver(vx,vy)
-caxis([velmin velmax])
+quiver(vx,vy, 0)
 title('flow, sigma = 2')
