@@ -8,11 +8,11 @@ function [M11, M12, M22] = getM(I, sigma)
     
     % As weighting function use a two-dimensional Gaussian Kernel with a
     % standard deviation sigma. Use a kernel size k = 2 * 2sigma + 1.
-    G = fspecial('gaussian',2*ceil(2 * sigma)+1,sigma);
+    G = fspecial('gaussian',ceil(4 * sigma)+1,sigma);
      
     % Use Matlab function conv2 to compute M11, M12 and M22. It isn't
     % nessary to compute M21 as it is equal to M12.
-    M11 = conv2(G, Ix .* Ix, 'same');
-    M12 = conv2(G, Ix .* Iy, 'same');
-    M22 = conv2(G, Iy .* Iy, 'same');
+    M11 = conv2(Ix .* Ix, G, 'same');
+    M12 = conv2(Ix .* Iy, G, 'same');
+    M22 = conv2(Iy .* Iy, G, 'same');
 end
