@@ -17,6 +17,7 @@ m = 8;
 X1 = zeros(m,3);
 r = eye(3);
 t = zeros(3,1);
+% In general, only one of the reconstructions is valid (has positive depth)
 [isPosDepth, X1_] = reconstruction(r1, t1, pts1, pts2, m);
 if isPosDepth == 1
     X1 = X1_;
