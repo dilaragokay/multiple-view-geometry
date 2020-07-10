@@ -9,3 +9,4 @@ MATLAB exercises for Multiple View Geometry (IN2228) at Technical University of 
 | 3            | Homogeneous transformation matrices and twist-coordinates         |
 | 4            | Image formation                                                   |
 | 5            | Structure tensor, Harris corner detector, and Lucas-Kanade method |
+| 6            | Eight-point algorithm, structure reconstruction                   |
