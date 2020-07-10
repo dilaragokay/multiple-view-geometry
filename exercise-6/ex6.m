@@ -12,5 +12,34 @@ m = 8;
 % order
 [x2, y2] = getpoints2(I2, m);
 % Find camera transformation parameters
-[r1, r2, t1, t2] = eightPoints(x1, y1, x2, y2, m);
+[r1, r2, t1, t2, pts1, pts2] = eightPoints(x1, y1, x2, y2, m);
 
+X1 = zeros(m,3);
+r = eye(3);
+t = zeros(3,1);
+[isPosDepth, X1_] = reconstruction(r1, t1, pts1, pts2, m);
+if isPosDepth == 1
+    X1 = X1_;
+    r = r1;
+    t = t1;
+end
+[isPosDepth, X1_] = reconstruction(r1, t2, pts1, pts2, m);
+if isPosDepth == 1
+    X1 = X1_;
+    r = r1;
+    t = t2;
+end
+[isPosDepth, X1_] = reconstruction(r2, t1, pts1, pts2, m);
+if isPosDepth == 1
+    X1 = X1_;
+    r = r2;
+    t = t1;
+end
+[isPosDepth, X1_] = reconstruction(r2, t2, pts1, pts2, m);
+if isPosDepth == 1
+    X1 = X1_;
+    r = r2;
+    t = t2;
+end
+
+visualizeReconstruction(X1, r, t);
