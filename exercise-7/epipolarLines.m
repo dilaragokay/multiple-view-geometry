@@ -46,13 +46,5 @@ y2 = m * x2 + b;
 I1 = imread("batinria1.pgm");
 imshow(I1);
 hold on;
-plot(x, y, 'b+', 'MarkerSize', 5);
 line([x1,x2],[y1,y2],'Color','r','LineWidth',1);
 hold off;
-% Observation: Epipolar line seems to be nearly horizontal for various x1.
-% Reason: Epipolar line is defined as the intersection between the epipolar
-% plane and image plane. We can observe that the translation between camera
-% frame 0 and camera frame 1 is significantly large in horizontal direction
-% compared to the other directions (see varible T). Therefore, the epipolar
-% plane will be almost parallel to the ground, which results in a nearly
-% horizontal epipolar line.
