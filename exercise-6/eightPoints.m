@@ -1,6 +1,6 @@
 function [r1, r2, t1, t2, pts1, pts2] = eightPoints(x1, y1, x2, y2, m)
 
-% Intrinsic camera parameter matrices
+% Intrinsic camera parameter matrices (given)
 K1 = [844.310547 0 243.413315; 0 1202.508301 281.529236; 0 0 1];
 K2 = [852.721008 0 252.021805; 0 1215.657349 288.587189; 0 0 1];
 
